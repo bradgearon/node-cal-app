@@ -11,6 +11,7 @@
 ## "server" side
 * starts at app.js
 * launches the window
+* fetch the data (any recommended doc on google calendar API)
 * renders the thing (template, binding #angular)
 * sets up an observer that publishes data updates
 
