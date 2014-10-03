@@ -20,4 +20,4 @@
 * receives updated... data...
 * ... angular? since automagical
 
-more to come
+arch: https://bitbucket.org/bradgearon/nerd-cal/downloads/Nerd%20Carl%20Arch.pdf
