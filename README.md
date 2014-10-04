@@ -1,5 +1,6 @@
 * docs here: https://github.com/atom/atom-shell/tree/master/docs
 * runs on a pi: http://www.amazon.com/Tontec-Raspberry-Display-AT070TN90-Touchscreen/dp/B00HNLXZHO
+http://www.raspberrypi.org/help/quick-start-guide/
 * sits in front of a room
 * displays meeting info
 * other silly features (arkanoid or something while you wait)
