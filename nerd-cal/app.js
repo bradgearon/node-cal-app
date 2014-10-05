@@ -21,6 +21,7 @@ app.on('ready', function() {
   mainWindow.setFullScreen(true);
 
   // and load the index.html of the app.
+  // ADD: app interface and functions here
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
   // Emitted when the window is closed.
