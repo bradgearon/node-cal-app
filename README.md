@@ -24,3 +24,4 @@
 * ... angular? since automagical
 
 arch: https://bitbucket.org/bradgearon/nerd-cal/downloads/Nerd%20Carl%20Arch.pdf
+more arch / flow: https://docs.google.com/document/d/1Jyi3Yf6sK4cdyatmlr5zdrM8G-8U2Lld73aSTGs76a8/edit
