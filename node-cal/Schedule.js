@@ -1,7 +1,7 @@
 ﻿// todo: inject
 var Auth = require('./Auth');
 var google = require('googleapis');
-
+var config = require('./config.json');
 
 var Schedule = function (authClient) {
     this._calendar = google.calendar({
@@ -12,7 +12,7 @@ var Schedule = function (authClient) {
 
 Schedule.prototype.subscribe = function () {
     this._calendar.events.watch({
-        calendarId: 'bradgearon@gmail.com'
+        calendarId: config.calendar_id
     }, this.handleEvent.bind(this));
 };
 
