@@ -85,7 +85,7 @@ https://github.com/atom/atom-shell/blob/master/docs/api/app.md
 https://github.com/atom/atom-shell/blob/master/docs/tutorial/quick-start.md
 
 + all events mentioned are atom-shell events
-+ main.js listens for ready event: ready event from atom-shell process
++ app.js listens for ready event: ready event from atom-shell process
 + scans for modules (.js files in a folder)
 + requires each module
 + calls imodule.start
