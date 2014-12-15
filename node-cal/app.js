@@ -33,8 +33,8 @@
 
 		var auth = new Auth();
 		var url = auth.getUrl();
-		var tokenDeferred = Q.defer();
-		var subscribeDeferred = Q.defer();
+		var hasToken = Q.defer();
+		var subscribed = Q.defer();
 
 		var handleFinishLoad = function (event) {
 			var newUrl = mainWindow.getUrl();
@@ -45,16 +45,16 @@
 			}
 
 			var code = newUrl.substr(codeStart);
-			tokenDeferred.resolve(code);
+			hasToken.resolve(code);
 		};
 
 		var handleTokenSet = function () {
 			var schedule = new Schedule(auth.client);
 			try {
 				var promise = schedule.getEvents();
-				subscribeDeferred.resolve(promise);
+				subscribed.resolve(promise);
 			} catch (err) {
-				subscribeDeferred.reject(err);
+				subscribed.reject(err);
 			}
 		};
 
@@ -79,8 +79,10 @@
 		mainWindow.webContents.on('did-finish-load', handleFinishLoad);
 		mainWindow.loadUrl(url);
 
-		Q.when(tokenDeferred.promise).then(handleCode); //error state?
-		Q.when(subscribeDeferred.promise).then(handleSubscribe, handleSubscribeError);
+
+
+		Q.when(hasToken.promise).then(handleCode); //error state?
+		Q.when(subscribed.promise).then(handleSubscribe, handleSubscribeError);
 
 		// var schedule = new Schedule(auth.client);
 
