@@ -7,7 +7,7 @@
 	var config = require('./../config.json');
 	var uuid = require('node-uuid');
 
-	var Schedule = function (authClient) {
+	var ScheduleService = function (authClient) {
 		this._calendar = google.calendar({
 			version: 'v3',
 			auth: authClient
@@ -15,7 +15,7 @@
 		this._channelId = uuid.v4();
 	};
 
-	Schedule.prototype.getEvents = function () {
+	ScheduleService.prototype.getEvents = function () {
 		var eventsDeferred = Q.defer();
 		this._calendar.events.list({
 			calendarId: config.calendar_id
@@ -23,7 +23,7 @@
 		return eventsDeferred.promise;
 	};
 
-	Schedule.prototype.handleEvent = function (eventsDeferred, errors, response) {
+	ScheduleService.prototype.handleEvent = function (eventsDeferred, errors, response) {
 		console.trace(arguments);
 		if (errors !== null) {
 			console.error(errors);
@@ -32,6 +32,6 @@
 		eventsDeferred.resolve(response);
 	};
 
-	module.exports = Schedule;
+	module.exports = ScheduleService;
 
 }());

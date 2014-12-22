@@ -5,10 +5,8 @@
 	var credentials = require('./../google-api.json');
 	var google = require('googleapis');
 
-	var Auth = function () {
-		this._scopes = [
-			'https://www.googleapis.com/auth/calendar'
-		];
+	var AuthService = function () {
+		this._scopes = credentials.scopes;
 		this.client = new google.auth.OAuth2(
 			credentials.client_id,
 			credentials.client_secret,
@@ -16,14 +14,14 @@
 		);
 	};
 
-	Auth.prototype.getUrl = function () {
+	AuthService.prototype.getUrl = function () {
 		return this.client.generateAuthUrl({
 			access_type: 'offline',
 			scope: this._scopes
 		});
 	};
 
-	Auth.prototype.handleGetToken = function (deferred, err, tokens) {
+	AuthService.prototype.handleGetToken = function (deferred, err, tokens) {
 		console.trace(arguments);
 
 		if (err) {
@@ -35,12 +33,12 @@
 		deferred.resolve();
 	};
 
-	Auth.prototype.setToken = function (code) {
+	AuthService.prototype.setToken = function (code) {
 		var tokenDeferred = Q.defer();
 		this.client.getToken(code, this.handleGetToken.bind(this, tokenDeferred));
 		return tokenDeferred.promise;
 	};
 
-	module.exports = Auth;
+	module.exports = AuthService;
 
 })();
