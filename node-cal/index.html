@@ -2,17 +2,17 @@
 <html>
 <head>
     <title>nodecal</title>
+    <script src="bower_components/requirejs/require.js"></script>
+    <script src="config.js"></script>
 </head>
 <body>
 
 <script>
-    (function () {
-        'use strict';
-        var ipc = require('ipc');
+    'use strict';
+    define('blar', ['ipc', 'angular'], function (ipc, angular) {
+        console.log(arguments);
+        ipc.on('schedule', function (schedule) {
 
-        ipc.on('schedule', function () {
-            debugger;
-            console.log(arguments);
         });
 
     }());

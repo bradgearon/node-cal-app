@@ -44,7 +44,7 @@
 		var subscribeDeferred = Q.defer();
 
 		var setSchedule = function() {
-			mainWindow.webContents.send('schedule', schedule.data);
+			mainWindow.webContents.send('schedule', schedule);
 		};
 
 		var handleFinishLoad = function (event) {
@@ -83,12 +83,10 @@
 			console.error('invalid auth redirect: '.url);
 		};
 
-		var handleSubscribe = function (promise) {
-			promise.then(function (data) {
+		var handleSubscribe = function (data) {
+				console.log(data, 'handleSubscribe');
 				schedule.data = data;
-				mainWindow.webContents.send('schedule', schedule.data);
-			});
-
+				mainWindow.webContents.send('schedule', schedule);
 		};
 
 		var handleSubscribeError = function (err) {
