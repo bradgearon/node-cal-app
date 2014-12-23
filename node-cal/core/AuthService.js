@@ -1,4 +1,5 @@
-﻿﻿﻿(function () {
+﻿﻿﻿
+(function () {
 	'use strict';
 
 	var Q = require('Q');
@@ -14,7 +15,7 @@
 		);
 	};
 
-	Auth.getCode = function(newUrl) {
+	AuthService.getCode = function (newUrl) {
 		var codeWord = 'code=';
 		var codeStart = newUrl.lastIndexOf(codeWord);
 
@@ -25,7 +26,7 @@
 		return newUrl.substr(codeStart + codeWord.length);
 	};
 
-	Auth.prototype.getUrl = function () {
+	AuthService.prototype.getUrl = function () {
 		return this.client.generateAuthUrl({
 			access_type: 'offline',
 			scope: this._scopes

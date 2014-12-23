@@ -29,17 +29,19 @@
 	// This method will be called when atom-shell has done everything
 	// initialization and ready for creating browser windows.
 	app.on('ready', function () {
-		var Schedule = require('./core/ScheduleService');
-		var Auth = require('./core/AuthService');
+		var ScheduleService = require('./core/ScheduleService');
+		var AuthService = require('./core/AuthService');
 
 		// Create the browser window.
 		mainWindow = new BrowserWindow({});
 		mainWindow.setFullScreen(true);
 
+		var schedule = { data: { }};
+
 		var auth = new AuthService();
 		var url = auth.getUrl();
-		var hasToken = Q.defer();
-		var subscribed = Q.defer();
+		var tokenDeferred = Q.defer();
+		var subscribeDeferred = Q.defer();
 
 		var setSchedule = function() {
 			mainWindow.webContents.send('schedule', schedule.data);
@@ -47,9 +49,8 @@
 
 		var handleFinishLoad = function (event) {
 			var newUrl = mainWindow.getUrl();
-			var code = Auth.getCode(newUrl);
+			var code = AuthService.getCode(newUrl);
 			if (!code) {
-				hasToken.reject(newUrl);
 				return;
 			}
 			mainWindow.webContents.removeListener('did-finish-load', handleFinishLoad);
@@ -57,7 +58,7 @@
 			var indexPath = path.join('file://', __dirname, '/index.html');
 			if(!/file\:/.test(newUrl)) {
 				mainWindow.loadUrl(indexPath);
-			hasToken.resolve(code);
+				tokenDeferred.resolve(code);
 				mainWindow.webContents.on('did-finish-load', setSchedule);
 			}
 
@@ -67,9 +68,9 @@
 			var schedule = new ScheduleService(auth.client);
 			try {
 				var promise = schedule.getEvents();
-				subscribed.resolve(promise);
+				subscribeDeferred.resolve(promise);
 			} catch (err) {
-				subscribed.reject(err);
+				subscribeDeferred.reject(err);
 			}
 		};
 
@@ -100,11 +101,8 @@
 		mainWindow.loadUrl(url);
 		mainWindow.openDevTools();
 
-		Q.when(hasToken.promise)
-			.then(handleCode, handleCodeError);
-
-		Q.when(subscribed.promise)
-			.then(handleSubscribe, handleSubscribeError);
+		Q.when(tokenDeferred.promise).then(handleCode, handleCodeError); //error state?
+		Q.when(subscribeDeferred.promise).then(handleSubscribe, handleSubscribeError);
 
 		mainWindow.on('closed', function () {
 			mainWindow = null;
