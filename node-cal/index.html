@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>nodecal</title>
-  </head>
-  <body>
+</head>
+<body>
 
-  </body>
+<script>
+    (function () {
+        'use strict';
+        var ipc = require('ipc');
+
+        ipc.on('schedule', function () {
+            debugger;
+            console.log(arguments);
+        });
+
+    }());
+</script>
+</body>
 </html>

@@ -3,9 +3,13 @@
 
 	// Module to control application life.
 	var app = require('app');
+	var path = require('path');
 
 	// Module to create native browser window.
 	var BrowserWindow = require('browser-window');
+
+	// inter
+	var ipc = require('ipc');
 
 	var Q = require('q');
 
@@ -15,6 +19,7 @@
 	// Keep a global reference of the window object, if you don't, the window will
 	// be closed automatically when the javascript object is GCed.
 	var mainWindow = null;
+
 
 	// Quit when all windows are closed.
 	app.on('window-all-closed', function () {
@@ -36,17 +41,26 @@
 		var hasToken = Q.defer();
 		var subscribed = Q.defer();
 
+		var setSchedule = function() {
+			mainWindow.webContents.send('schedule', schedule.data);
+		};
+
 		var handleFinishLoad = function (event) {
 			var newUrl = mainWindow.getUrl();
-			var codeStart = newUrl.lastIndexOf('code=');
-
-			if (codeStart < 0) {
+			var code = Auth.getCode(newUrl);
+			if (!code) {
 				hasToken.reject(newUrl);
 				return;
 			}
+			mainWindow.webContents.removeListener('did-finish-load', handleFinishLoad);
 
-			var code = newUrl.substr(codeStart);
+			var indexPath = path.join('file://', __dirname, '/index.html');
+			if(!/file\:/.test(newUrl)) {
+				mainWindow.loadUrl(indexPath);
 			hasToken.resolve(code);
+				mainWindow.webContents.on('did-finish-load', setSchedule);
+			}
+
 		};
 
 		var handleTokenSet = function () {
@@ -60,7 +74,6 @@
 		};
 
 		var handleCode = function (code) {
-			code = code.substr(5);
 			auth.setToken(code)
 				.then(handleTokenSet);
 		};
@@ -71,9 +84,10 @@
 
 		var handleSubscribe = function (promise) {
 			promise.then(function (data) {
-				console.trace(data);
+				schedule.data = data;
+				mainWindow.webContents.send('schedule', schedule.data);
 			});
-			mainWindow.loadUrl('file://' + __dirname + '/index.html');
+
 		};
 
 		var handleSubscribeError = function (err) {
@@ -84,6 +98,7 @@
 			.on('did-finish-load', handleFinishLoad);
 
 		mainWindow.loadUrl(url);
+		mainWindow.openDevTools();
 
 		Q.when(hasToken.promise)
 			.then(handleCode, handleCodeError);
