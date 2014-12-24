@@ -4,6 +4,7 @@
 	// Module to control application life.
 	var app = require('app');
 	var path = require('path');
+	var md5 = require('MD5');
 
 	// Module to create native browser window.
 	var BrowserWindow = require('browser-window');
@@ -43,7 +44,7 @@
 		var tokenDeferred = Q.defer();
 		var subscribeDeferred = Q.defer();
 
-		var setSchedule = function() {
+		var setSchedule = function () {
 			mainWindow.webContents.send('schedule', schedule);
 		};
 
@@ -55,13 +56,12 @@
 			}
 			mainWindow.webContents.removeListener('did-finish-load', handleFinishLoad);
 
-			var indexPath = path.join('file://', __dirname, '/index.html');
-			if(!/file\:/.test(newUrl)) {
+			var indexPath = path.join('file://', __dirname, '/../ui', '/index.html');
+			if (!/file\:/.test(newUrl)) {
 				mainWindow.loadUrl(indexPath);
 				tokenDeferred.resolve(code);
 				mainWindow.webContents.on('did-finish-load', setSchedule);
 			}
-
 		};
 
 		var handleTokenSet = function () {
@@ -84,9 +84,18 @@
 		};
 
 		var handleSubscribe = function (data) {
-				console.log(data, 'handleSubscribe');
-				schedule.data = data;
-				mainWindow.webContents.send('schedule', schedule);
+			console.log(data, 'handleSubscribe');
+			schedule.data = data;
+			var fs = require('fs');
+			var _ = require('lodash-node');
+			_.map(data.items, function(item){
+				console.log(item);
+				var email = item.organizer.email;
+				item.gravatarImageUrl = 'http://www.gravatar.com/avatar/' + md5(email);
+			});
+
+			fs.writeFileSync('data.json', JSON.stringify(data), { encoding: 'utf8' });
+			mainWindow.webContents.send('schedule', schedule);
 		};
 
 		var handleSubscribeError = function (err) {
