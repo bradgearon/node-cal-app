@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="./" >
+    <title>nodecal</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <script src="bower_components/requirejs/require.js"></script>
+    <script src="js/r.config.js"></script>
+</head>
+<body>
+    <div ng-view></div>
+<script>
+requirejs([
+    'angular',
+    'app',
+    'config',
+    'hammer',
+    'angular-route',
+    'angular-resource',
+    'angular-material'
+], function (angular, cal, hammer) {
+    GLOBAL.Hammer = hammer;
+    angular.bootstrap(document, ['calApp']);
+});
+</script>
+</body>
+</html>

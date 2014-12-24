@@ -19,11 +19,11 @@ maybe refresh some hipchat module on the page (another module not this node-cal 
 # modules as packages
 + apm == npm, modified to fix issues with node version and native modules (binaries)
 + apm is Junk (with a capital j <a mac could type the character i want here )
-+ npm is good… git hub urls for now?
++ npm is goodï¿½ git hub urls for now?
 
 # atom-shell
 + atom-shell source code: https://github.com/atom/atom-shell/blob/master/docs/development/source-code-directory-structure.md
-+ chromium’s multi-process architecture: http://dev.chromium.org/developers/design-documents/multi-process-architecture 
++ chromiumï¿½s multi-process architecture: http://dev.chromium.org/developers/design-documents/multi-process-architecture 
 
 # ui
 display google calendar event info: name, date, time; description - only if its public
@@ -54,14 +54,14 @@ https://github.com/google/google-api-nodejs-client/
 + Pi configuration
 + http://archlinuxarm.org/platforms/armv6/raspberry-pi  arch or ubuntu installed on pi
 + Wifi / LAN setup on pi
-+ Test pi’s internet connection within firewall
-+ Test pi’s connection to display
++ Test piï¿½s internet connection within firewall
++ Test piï¿½s connection to display
 + atom-shell linux binaries downloaded to the device
-	+ https://github.com/atom/atom-shell/blob/master/docs/tutorial/using-native-node-modules.md ( can use **apm from atom-shell, don’t need to install node**)
+	+ https://github.com/atom/atom-shell/blob/master/docs/tutorial/using-native-node-modules.md ( can use **apm from atom-shell, donï¿½t need to install node**)
 + Register google API console account
 + git installed on device
-+ git fork the app on the device’s filesystem (forked) 
-+ run “./run.sh” to auto install atom-shell and setup the project
++ git fork the app on the deviceï¿½s filesystem (forked) 
++ run ï¿½./run.shï¿½ to auto install atom-shell and setup the project
 
 ## other considerations (tbd)
 + should be the default gui for the running os
@@ -83,8 +83,9 @@ run.sh -- run this script to auto start app, super cool
 reference: https://github.com/atom/atom-shell/blob/master/docs/tutorial/application-distribution.md
 https://github.com/atom/atom-shell/blob/master/docs/api/app.md
 https://github.com/atom/atom-shell/blob/master/docs/tutorial/quick-start.md
+
 + all events mentioned are atom-shell events
-+ main.js listens for ready event: ready event from atom-shell process
++ app.js listens for ready event: ready event from atom-shell process
 + scans for modules (.js files in a folder)
 + requires each module
 + calls imodule.start
@@ -97,7 +98,7 @@ https://github.com/atom/atom-shell/blob/master/docs/tutorial/quick-start.md
 ## schedule module (imodule implementation)
 + (require module) 
 + start: starts things
-+ … (I don’t know what: mainWindow.loadUrl('file://' + __dirname + '/index.html');)  
++ ï¿½ (I donï¿½t know what: mainWindow.loadUrl('file://' + __dirname + '/index.html');)  
 + on push event the angular (data bound) scope.schedule will be updated (automagically)
 + will setup a proxy, create the client and give it to it (the proxy)
 + client will bind data (displayed in the view + auto binds)

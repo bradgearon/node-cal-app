@@ -10,10 +10,10 @@ pushd "${DIR}/build"
 popd
 
 #MacOS
-"./build/atom-shell/Atom.app/Contents/MacOS/Atom" "./nerd-cal"
+#"./build/atom-shell/Atom.app/Contents/MacOS/Atom" "./nerd-cal"
 
 #Windows
-"./build/atom-shell/atom" "${DIR}/nerd-cal"
+./build/atom-shell/atom "${DIR}/nerd-cal"
 
 #Linux
-./build/atom-shell/atom "${DIR}/nerd-cal"
+#./build/atom-shell/atom "${DIR}/nerd-cal"

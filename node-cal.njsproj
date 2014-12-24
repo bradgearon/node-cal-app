@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0cf43b56-49f7-4266-99d3-26516b88a13d}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Compile Include="node-cal\Auth.js" />
+    <Compile Include="node-cal\Schedule.js" />
+    <Content Include="node-cal\config.json" />
+    <Content Include="node-cal\google-api.json" />
+    <Content Include="README.md" />
+    <Content Include="build\package.json" />
+    <Compile Include="build\Gruntfile.js" />
+    <Content Include="docs\design.md" />
+    <Content Include="node-cal\index.html" />
+    <Content Include="node-cal\package.json" />
+    <Compile Include="node-cal\app.js" />
+    <Content Include="build\atom-shell\resources\default_app\index.html" />
+    <Content Include="build\atom-shell\resources\default_app\package.json" />
+    <Compile Include="build\atom-shell\resources\default_app\default_app.js" />
+    <Compile Include="build\atom-shell\resources\default_app\main.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\lib\init.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\lib\objects-registry.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\lib\rpc-server.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\app.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\atom-delegate.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\auto-updater.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\browser-window.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\content-tracing.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\dialog.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\global-shortcut.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\ipc.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\menu-item.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\menu.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\power-monitor.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\protocol.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\tray.js" />
+    <Compile Include="build\atom-shell\resources\atom\browser\api\lib\web-contents.js" />
+    <Compile Include="build\atom-shell\resources\atom\common\lib\init.js" />
+    <Compile Include="build\atom-shell\resources\atom\common\api\lib\callbacks-registry.js" />
+    <Compile Include="build\atom-shell\resources\atom\common\api\lib\clipboard.js" />
+    <Compile Include="build\atom-shell\resources\atom\common\api\lib\crash-reporter.js" />
+    <Compile Include="build\atom-shell\resources\atom\common\api\lib\id-weak-map.js" />
+    <Compile Include="build\atom-shell\resources\atom\common\api\lib\screen.js" />
+    <Compile Include="build\atom-shell\resources\atom\common\api\lib\shell.js" />
+    <Compile Include="build\atom-shell\resources\atom\renderer\lib\init.js" />
+    <Compile Include="build\atom-shell\resources\atom\renderer\lib\inspector.js" />
+    <Compile Include="build\atom-shell\resources\atom\renderer\lib\override.js" />
+    <Compile Include="build\atom-shell\resources\atom\renderer\api\lib\ipc.js" />
+    <Compile Include="build\atom-shell\resources\atom\renderer\api\lib\remote.js" />
+    <Compile Include="build\atom-shell\resources\atom\renderer\api\lib\web-view.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="build" />
+    <Folder Include="build\atom-shell" />
+    <Folder Include="build\atom-shell\locales" />
+    <Folder Include="build\atom-shell\resources" />
+    <Folder Include="build\atom-shell\resources\atom" />
+    <Folder Include="build\atom-shell\resources\atom\browser" />
+    <Folder Include="build\atom-shell\resources\atom\browser\api" />
+    <Folder Include="build\atom-shell\resources\atom\browser\api\lib" />
+    <Folder Include="build\atom-shell\resources\atom\browser\lib" />
+    <Folder Include="build\atom-shell\resources\atom\common" />
+    <Folder Include="build\atom-shell\resources\atom\common\api" />
+    <Folder Include="build\atom-shell\resources\atom\common\api\lib" />
+    <Folder Include="build\atom-shell\resources\atom\common\lib" />
+    <Folder Include="build\atom-shell\resources\atom\renderer" />
+    <Folder Include="build\atom-shell\resources\atom\renderer\api" />
+    <Folder Include="build\atom-shell\resources\atom\renderer\api\lib" />
+    <Folder Include="build\atom-shell\resources\atom\renderer\lib" />
+    <Folder Include="build\atom-shell\resources\default_app" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\example" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\node_modules" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\node_modules\minimist" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\node_modules\minimist\example" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\node_modules\minimist\test" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\node_modules\wordwrap" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\node_modules\wordwrap\example" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\node_modules\wordwrap\test" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\test" />
+    <Folder Include="build\atom-shell\resources\default_app\node_modules\optimist\test\_" />
+    <Folder Include="build\node_modules" />
+    <Folder Include="build\node_modules\grunt" />
+    <Folder Include="build\node_modules\grunt\internal-tasks" />
+    <Folder Include="build\node_modules\grunt\lib" />
+    <Folder Include="build\node_modules\grunt\lib\grunt" />
+    <Folder Include="build\node_modules\grunt\lib\util" />
+    <Folder Include="build\node_modules\grunt\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\async" />
+    <Folder Include="build\node_modules\grunt\node_modules\async\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\coffee-script" />
+    <Folder Include="build\node_modules\grunt\node_modules\coffee-script\bin" />
+    <Folder Include="build\node_modules\grunt\node_modules\coffee-script\extras" />
+    <Folder Include="build\node_modules\grunt\node_modules\coffee-script\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\coffee-script\lib\coffee-script" />
+    <Folder Include="build\node_modules\grunt\node_modules\colors" />
+    <Folder Include="build\node_modules\grunt\node_modules\colors\themes" />
+    <Folder Include="build\node_modules\grunt\node_modules\dateformat" />
+    <Folder Include="build\node_modules\grunt\node_modules\dateformat\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\dateformat\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\eventemitter2" />
+    <Folder Include="build\node_modules\grunt\node_modules\eventemitter2\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\exit" />
+    <Folder Include="build\node_modules\grunt\node_modules\exit\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\exit\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\exit\test\fixtures" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\examples" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\inherits" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\node_modules\sigmund\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\node_modules\minimatch\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\glob\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\lodash" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\node_modules\lodash\dist" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\test\fixtures" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\test\fixtures\a" />
+    <Folder Include="build\node_modules\grunt\node_modules\findup-sync\test\fixtures\a\b" />
+    <Folder Include="build\node_modules\grunt\node_modules\getobject" />
+    <Folder Include="build\node_modules\grunt\node_modules\getobject\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\getobject\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\glob" />
+    <Folder Include="build\node_modules\grunt\node_modules\glob\examples" />
+    <Folder Include="build\node_modules\grunt\node_modules\glob\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\glob\node_modules\graceful-fs" />
+    <Folder Include="build\node_modules\grunt\node_modules\glob\node_modules\graceful-fs\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\glob\node_modules\inherits" />
+    <Folder Include="build\node_modules\grunt\node_modules\glob\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\lodash" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\lodash\dist" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\underscore.string" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\underscore.string\dist" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\underscore.string\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\underscore.string\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\underscore.string\test\test_underscore" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\node_modules\underscore.string\test\test_underscore\vendor" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-log\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-util" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-util\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\grunt-legacy-util\test\fixtures" />
+    <Folder Include="build\node_modules\grunt\node_modules\hooker" />
+    <Folder Include="build\node_modules\grunt\node_modules\hooker\dist" />
+    <Folder Include="build\node_modules\grunt\node_modules\hooker\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\hooker\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\iconv-lite" />
+    <Folder Include="build\node_modules\grunt\node_modules\iconv-lite\encodings" />
+    <Folder Include="build\node_modules\grunt\node_modules\iconv-lite\encodings\table" />
+    <Folder Include="build\node_modules\grunt\node_modules\iconv-lite\generation" />
+    <Folder Include="build\node_modules\grunt\node_modules\iconv-lite\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\bin" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\examples" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\lib\js-yaml" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\lib\js-yaml\schema" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\lib\js-yaml\type" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\lib\js-yaml\type\js" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\examples" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\lib\action" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\lib\action\append" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\lib\action\store" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\lib\argument" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\lib\help" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules\underscore" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules\underscore.string" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules\underscore.string\dist" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules\underscore.string\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules\underscore.string\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules\underscore.string\test\test_underscore" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\argparse\node_modules\underscore.string\test\test_underscore\vendor" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\esprima" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\esprima\bin" />
+    <Folder Include="build\node_modules\grunt\node_modules\js-yaml\node_modules\esprima\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\lodash" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch\node_modules\lru-cache" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch\node_modules\lru-cache\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch\node_modules\lru-cache\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch\node_modules\sigmund" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch\node_modules\sigmund\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\minimatch\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\nopt" />
+    <Folder Include="build\node_modules\grunt\node_modules\nopt\bin" />
+    <Folder Include="build\node_modules\grunt\node_modules\nopt\examples" />
+    <Folder Include="build\node_modules\grunt\node_modules\nopt\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\nopt\node_modules" />
+    <Folder Include="build\node_modules\grunt\node_modules\nopt\node_modules\abbrev" />
+    <Folder Include="build\node_modules\grunt\node_modules\rimraf" />
+    <Folder Include="build\node_modules\grunt\node_modules\rimraf\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\underscore.string" />
+    <Folder Include="build\node_modules\grunt\node_modules\underscore.string\dist" />
+    <Folder Include="build\node_modules\grunt\node_modules\underscore.string\lib" />
+    <Folder Include="build\node_modules\grunt\node_modules\underscore.string\test" />
+    <Folder Include="build\node_modules\grunt\node_modules\underscore.string\test\test_underscore" />
+    <Folder Include="build\node_modules\grunt\node_modules\underscore.string\test\test_underscore\vendor" />
+    <Folder Include="build\node_modules\grunt\node_modules\which" />
+    <Folder Include="build\node_modules\grunt\node_modules\which\bin" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\bin" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\example" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\buffers" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\buffers\examples" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\buffers\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\chainsaw" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\chainsaw\examples" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\chainsaw\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\chainsaw\node_modules\traverse" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\chainsaw\node_modules\traverse\examples" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\chainsaw\node_modules\traverse\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\node_modules\chainsaw\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\perf" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\binary\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\mkpath" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\mkpath\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\nopt" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\nopt\bin" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\nopt\examples" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\nopt\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\nopt\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\nopt\node_modules\abbrev" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\q" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\q\benchmark" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\node_modules\core-util-is" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\node_modules\core-util-is\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\node_modules\inherits" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\node_modules\isarray" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\node_modules\isarray\build" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\readable-stream\node_modules\string_decoder" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\bin" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\node_modules\nopt" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\node_modules\nopt\bin" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\node_modules\nopt\examples" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\node_modules\nopt\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\node_modules\nopt\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\node_modules\nopt\node_modules\abbrev" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\node_modules\touch\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\decompress-zip\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\bin" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch\node_modules\lru-cache" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch\node_modules\lru-cache\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch\node_modules\lru-cache\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch\node_modules\sigmund" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch\node_modules\sigmund\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\minimatch\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist\example" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist\node_modules\wordwrap" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist\node_modules\wordwrap\example" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist\node_modules\wordwrap\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\optimist\test\_" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\bin" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\docs" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\docs\images" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\docs\javascripts" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\docs\stylesheets" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\node_modules\colors" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\site" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\site\images" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\site\javascripts" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\site\stylesheets" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\prettyjson\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\aws-sign" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\cookie-jar" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\cookie-jar\tests" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\forever-agent" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\async" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\async\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\combined-stream" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\combined-stream\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\form-data\node_modules\combined-stream\node_modules\delayed-stream\test\integration" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\example" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\images" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\boom" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\boom\images" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\boom\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\boom\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\cryptiles" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\cryptiles\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\cryptiles\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\hoek" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\hoek\images" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\hoek\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\hoek\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\hoek\test\modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\sntp" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\sntp\examples" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\sntp\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\node_modules\sntp\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\hawk\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\asn1" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\asn1\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\asn1\lib\ber" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\asn1\tst" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\asn1\tst\ber" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\assert-plus" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\man" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\man\man3ctype" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tools" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tst" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tst\ctf" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tst\ctio" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tst\ctio\float" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tst\ctio\int" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tst\ctio\uint" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\http-signature\node_modules\ctype\tst\ctype" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\json-stringify-safe" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\mime" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\mime\types" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\node-uuid" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\node-uuid\benchmark" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\node-uuid\test" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\oauth-sign" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\qs" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\node_modules\tunnel-agent" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\tests" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\tests\ssl" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\node_modules\request\tests\ssl\ca" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\github-releases\tasks" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\progress" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\progress\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\lib" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests\readdir" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests\readdir\foo" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests\readdir\foo\bar" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests\shown" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests\shown\foo" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests\shown\foo\bar" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\node_modules\wrench\tests\withsymlinks" />
+    <Folder Include="build\node_modules\grunt-download-atom-shell\tasks" />
+    <Folder Include="docs" />
+    <Folder Include="node-cal" />
+    <Folder Include="node-cal\modules" />
+    <Folder Include="node-cal\node_modules" />
+    <Folder Include="node-cal\node_modules\glob" />
+    <Folder Include="node-cal\node_modules\glob\examples" />
+    <Folder Include="node-cal\node_modules\glob\node_modules" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\graceful-fs" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\graceful-fs\test" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\inherits" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch\node_modules" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch\node_modules\lru-cache" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\lib" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch\node_modules\lru-cache\test" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch\node_modules\sigmund" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch\node_modules\sigmund\test" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\minimatch\test" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\once" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\once\node_modules" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\once\node_modules\wrappy" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\once\node_modules\wrappy\test" />
+    <Folder Include="node-cal\node_modules\glob\node_modules\once\test" />
+    <Folder Include="node-cal\node_modules\glob\test" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

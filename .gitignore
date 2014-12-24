@@ -4,4 +4,3 @@ build/atom-shell
 node_modules
 bower_components
 google-api.json
-.idea
