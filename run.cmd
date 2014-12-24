@@ -1,1 +1,1 @@
-@.\build\atom-shell\atom.exe %* .\node-cal
+@.\build\atom-shell\atom.exe --debug=true ".\node-cal"

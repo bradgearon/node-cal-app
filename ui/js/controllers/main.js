@@ -9,7 +9,8 @@ define([
 			scope.schedule = { };
 			ipc.on('schedule', function (schedule) {
 				scope.$apply(function () {
-					angular.extend(scope.schedule, schedule.data);
+					console.log(schedule);
+					angular.extend(scope.schedule, schedule);
 				});
 			});
 

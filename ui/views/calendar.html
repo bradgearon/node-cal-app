@@ -2,19 +2,21 @@
     <div flex>
         <md-content>
             <md-list>
-                <md-item ng-repeat="item in schedule.items">
+                <md-item ng-repeat="item in schedule.data">
                     <md-item-content>
-                        <div class="md-tile-left">
-                            <img ng-src="{{item.gravatarImageUrl}}" class="face" alt="{{item.creator.displayName}}">
-                        </div>
-                        <div class="md-tile-content">
-                            <h3>{{item.summary}}</h3>
-                            <h4><a href="{{item.hangoutLink}}">hangout</a></h4>
+                        <md-card>
+                            <div class="md-tile-left">
+                                <img ng-src="{{item.gravatarImageUrl}}" class="face" alt="{{item.creator.displayName}}">
+                            </div>
+                            <div class="md-tile-content">
+                                <h3>{{item.summary}}</h3>
+                                <h4><a href="{{item.hangoutLink}}">hangout</a></h4>
 
-                            <p>
-                                {{item.location}}
-                            </p>
-                        </div>
+                                <p>
+                                    {{item.location}}
+                                </p>
+                            </div>
+                        </md-card>
                     </md-item-content>
                 </md-item>
             </md-list>

@@ -4,6 +4,9 @@
 	// Module to control application life.
 	var app = require('app');
 	var path = require('path');
+	var parseArgs = require('minimist');
+	var argv = parseArgs(process.argv);
+
 	var md5 = require('MD5');
 
 	// Module to create native browser window.
@@ -45,7 +48,14 @@
 		var subscribeDeferred = Q.defer();
 
 		var setSchedule = function () {
+			console.log('send schedule', schedule);
 			mainWindow.webContents.send('schedule', schedule);
+		};
+
+		var loadMain = function () {
+			var indexPath = path.join('file://', __dirname, '/../ui', '/index.html');
+			mainWindow.webContents.on('did-finish-load', setSchedule);
+			mainWindow.loadUrl(indexPath);
 		};
 
 		var handleFinishLoad = function (event) {
@@ -55,12 +65,9 @@
 				return;
 			}
 			mainWindow.webContents.removeListener('did-finish-load', handleFinishLoad);
-
-			var indexPath = path.join('file://', __dirname, '/../ui', '/index.html');
 			if (!/file\:/.test(newUrl)) {
-				mainWindow.loadUrl(indexPath);
+				loadMain();
 				tokenDeferred.resolve(code);
-				mainWindow.webContents.on('did-finish-load', setSchedule);
 			}
 		};
 
@@ -84,32 +91,42 @@
 		};
 
 		var handleSubscribe = function (data) {
-			console.log(data, 'handleSubscribe');
-			schedule.data = data;
 			var fs = require('fs');
 			var _ = require('lodash-node');
-			_.map(data.items, function(item){
-				console.log(item);
+
+			schedule = _.assign(schedule, data);
+			_.map(data.items, function (item) {
+				console.log('item');
+				if (item.id !== null && item.id.length > 0) {
+					schedule.data[item.id] = item;
+				}
 				var email = item.organizer.email;
 				item.gravatarImageUrl = 'http://www.gravatar.com/avatar/' + md5(email);
 			});
+			delete schedule.items;
 
 			fs.writeFileSync('data.json', JSON.stringify(data), { encoding: 'utf8' });
-			mainWindow.webContents.send('schedule', schedule);
+			mainWindow.webContents.on('did-finish-load', setSchedule);
 		};
 
 		var handleSubscribeError = function (err) {
 			console.error(err);
 		};
 
-		mainWindow.webContents
-			.on('did-finish-load', handleFinishLoad);
+		console.log(argv.debug);
 
-		mainWindow.loadUrl(url);
-		mainWindow.openDevTools();
-
-		Q.when(tokenDeferred.promise).then(handleCode, handleCodeError); //error state?
-		Q.when(subscribeDeferred.promise).then(handleSubscribe, handleSubscribeError);
+		if (!argv.debug) {
+			mainWindow.webContents.on('did-finish-load', handleFinishLoad);
+			mainWindow.loadUrl(url);
+			Q.when(tokenDeferred.promise).then(handleCode, handleCodeError); //error state?
+			Q.when(subscribeDeferred.promise).then(handleSubscribe, handleSubscribeError);
+		} else {
+			mainWindow.openDevTools();
+			loadMain();
+			var data = require('../data.json');
+			schedule = data;
+			handleSubscribe(data);
+		}
 
 		mainWindow.on('closed', function () {
 			mainWindow = null;
