@@ -32,7 +32,8 @@ requirejs
 					'hammer',
 					'angular-aria',
 					'angular-animate'
-				]
+				],
+				exports: 'angular'
 			},
 			'lodash': {
 				exports: '_'

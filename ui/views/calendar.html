@@ -1,25 +1,17 @@
-<div layout="row">
-    <div flex>
-        <md-content>
-            <md-list>
-                <md-item ng-repeat="item in schedule.data">
-                    <md-item-content>
-                        <md-card>
-                            <div class="md-tile-left">
-                                <img ng-src="{{item.gravatarImageUrl}}" class="face" alt="{{item.creator.displayName}}">
-                            </div>
-                            <div class="md-tile-content">
-                                <h3>{{item.summary}}</h3>
-                                <h4><a href="{{item.hangoutLink}}">hangout</a></h4>
+<div layout="column" layout-fill>
+    <md-toolbar class="md-grey-theme"></md-toolbar>
+    <md-subheader class="md-primary">Meetings</md-subheader>
+    <md-content layout="row" layout-fill class="md-padding">
+        <div class="md-tile-left" flex>
+            <img ng-src="{{item.gravatarImageUrl}}" class="face" alt="{{item.creator.displayName}}">
+        </div>
+        <div class="md-tile-content">
+            <h3>{{item.summary}}</h3>
+            <h4><a href="{{item.hangoutLink}}">hangout</a></h4>
 
-                                <p>
-                                    {{item.location}}
-                                </p>
-                            </div>
-                        </md-card>
-                    </md-item-content>
-                </md-item>
-            </md-list>
-        </md-content>
-    </div>
+            <p>
+                {{item.location}}
+            </p>
+        </div>
+    </md-content>
 </div>

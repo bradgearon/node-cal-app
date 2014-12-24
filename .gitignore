@@ -5,3 +5,4 @@ node_modules
 bower_components
 google-api.json
 .idea
+atlassian-ide-plugin.xml

@@ -5,6 +5,8 @@
 	var app = require('app');
 	var path = require('path');
 	var parseArgs = require('minimist');
+	var fs = require('fs');
+	var _ = require('lodash-node');
 	var argv = parseArgs(process.argv);
 
 	var md5 = require('MD5');
@@ -37,8 +39,10 @@
 		var AuthService = require('./core/AuthService');
 
 		// Create the browser window.
-		mainWindow = new BrowserWindow({});
-		mainWindow.setFullScreen(true);
+		mainWindow = new BrowserWindow({
+			width: 1280,
+			height: 720
+		});
 
 		var schedule = { data: { }};
 
@@ -91,9 +95,6 @@
 		};
 
 		var handleSubscribe = function (data) {
-			var fs = require('fs');
-			var _ = require('lodash-node');
-
 			schedule = _.assign(schedule, data);
 			_.map(data.items, function (item) {
 				console.log('item');
@@ -124,8 +125,8 @@
 			mainWindow.openDevTools();
 			loadMain();
 			var data = require('../data.json');
-			schedule = data;
-			handleSubscribe(data);
+			_.assign(schedule, data);
+			handleSubscribe(schedule);
 		}
 
 		mainWindow.on('closed', function () {
