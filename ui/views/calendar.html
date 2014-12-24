@@ -1,17 +1,24 @@
-<div layout="column" layout-fill>
-    <md-toolbar class="md-grey-theme"></md-toolbar>
-    <md-subheader class="md-primary">Meetings</md-subheader>
-    <md-content layout="row" layout-fill class="md-padding">
-        <div class="md-tile-left" flex>
-            <img ng-src="{{item.gravatarImageUrl}}" class="face" alt="{{item.creator.displayName}}">
+<div layout="row" layout-fill class="md-padding">
+    <div flex="10"></div>
+    <div flex="80">
+        <div layout="column">
+            <h1></h1>
+            <div class="md-whiteframe-z1">
+                <md-toolbar class="md-grey-theme" style="height: 120px;"></md-toolbar>
+                <md-content class="md-padding" layout="row">
+                    <div class="md-tile-left" flex>
+                        <img ng-src="{{item.gravatarImageUrl}}" class="face" alt="{{item.creator.displayName}}">
+                    </div>
+                    <div class="md-tile-content" flex>
+                        <h3>{{item.summary}}</h3>
+                        <h4><a href="{{item.hangoutLink}}">hangout</a></h4>
+                        <p>
+                            {{item.location}}
+                        </p>
+                    </div>
+                </md-content>
+            </div>
         </div>
-        <div class="md-tile-content">
-            <h3>{{item.summary}}</h3>
-            <h4><a href="{{item.hangoutLink}}">hangout</a></h4>
-
-            <p>
-                {{item.location}}
-            </p>
-        </div>
-    </md-content>
+    </div>
+    <div flex="10"></div>
 </div>
