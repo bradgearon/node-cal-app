@@ -12,7 +12,9 @@ requirejs
 			'angular-aria': '../bower_components/angular-aria/angular-aria.min',
 			'angular-animate': '../bower_components/angular-animate/angular-animate.min',
 			'hammer': '../bower_components/hammerjs/hammer.min',
-			'lodash': '../bower_components/lodash/dist/lodash.min'
+			'lodash': '../bower_components/lodash/dist/lodash.min',
+			'text':'../bower_components/requirejs-plugins/lib/text',
+			'json':'../bower_components/requirejs-plugins/src/json'
 		},
 		shim: {
 			'angular': {
@@ -40,3 +42,7 @@ requirejs
 			}
 		}
 	});
+
+if(!window.process) {
+	requirejs(['./ipc']);
+}

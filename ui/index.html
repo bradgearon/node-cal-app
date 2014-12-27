@@ -49,13 +49,13 @@
     requirejs([
         'angular',
         'app',
-        'config',
         'hammer',
+        'config',
         'angular-route',
         'angular-resource',
         'angular-material'
     ], function (angular, cal, hammer) {
-        GLOBAL.Hammer = hammer;
+        window.Hammer = hammer;
         angular.bootstrap(document, ['calApp']);
     });
 </script>
