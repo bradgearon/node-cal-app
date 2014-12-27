@@ -1,0 +1,29 @@
+{
+  "name": "node-cal-app",
+  "version": "1.0.0",
+  "description": "* docs here: https://github.com/atom/atom-shell/tree/master/docs\r * runs on a pi: \r     - http://www.amazon.com/Tontec-Raspberry-Display-AT070TN90-Touchscreen/dp/B00HNLXZHO\r     - http://www.raspberrypi.org/help/quick-start-guide/\r     - http://www.openhomeautomation.net/monitor-your-home-raspberry-pi-b/\r * sits in front of a room\r * displays meeting info\r * other silly features (arkanoid or something while you wait)",
+  "main": "Gruntfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradgearon/node-cal-app"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradgearon/node-cal-app/issues"
+  },
+  "homepage": "https://github.com/bradgearon/node-cal-app",
+  "devDependencies": {
+    "connect-livereload": "^0.5.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^2.0.0"
+  }
+}
